@@ -13,7 +13,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'tpope/vim-fugitive'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()
@@ -46,9 +47,13 @@ if 'VIRTUAL_ENV' in os.environ:
   execfile(activate_this, dict(__file__=activate_this))
 EOF
 
-colorscheme zenburn
-
+colorscheme molokai
+let g:airline_theme='luna'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 set clipboard=unnamed
+set laststatus=2
+set t_Co=256
 
